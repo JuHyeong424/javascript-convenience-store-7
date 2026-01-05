@@ -43,3 +43,7 @@ export async function printReceipt() {
   Console.print(`${MEMBERSHIPDISCOUNT.name.padEnd(12, " ")} ${formatNumber('-' + String(MEMBERSHIPDISCOUNT.price)).padStart(14, " ")}`);
   Console.print(`${TOTALAMOUNTSPENT.name.padEnd(12, " ")} ${formatNumber(String(TOTALAMOUNTSPENT.price)).padStart(14, " ")}`);
 }
+
+export async function printError(error) {
+  Console.print(error);
+}

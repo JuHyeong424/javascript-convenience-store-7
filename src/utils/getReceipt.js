@@ -1,6 +1,8 @@
 import {BUYPROUDCTLIST, PROMOTIONLIST,} from "../data/receipt.js";
 import {PRODUCTS} from "../data/products.js";
 import {PROMOTIONS} from "../data/promotions.js";
+import {Console} from "@woowacourse/mission-utils";
+import {printError} from "../view/outputView.js";
 
 function getBoughtGoods(purchaseGoods) {
   // 입력 각 상품 구분하기
@@ -49,8 +51,6 @@ export function getPromotion() {
           object['promotionProductName'] = BUYPROUDCTLIST[i].name;
           object['promotionProductQuantity'] = value.get;
           PROMOTIONLIST.push(object);
-        } else {
-
         }
       })
     }
