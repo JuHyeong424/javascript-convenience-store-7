@@ -12,8 +12,8 @@ class App {
       resetData();
       await printInformationOfProduct();
       const purchaseGoods =  await inputBuy();
-      await getReceipt(purchaseGoods);
-      await hasPromotion();
+      const filterPromotion = await getReceipt(purchaseGoods);
+      await hasPromotion(filterPromotion);
       const membership = await inputMembership();
       getTotalPrice(membership);
       await printReceipt();

@@ -26,7 +26,7 @@ export async function printReceipt() {
   Console.print(`${'상품명'.padEnd(6, " ")}  ${'수량'.padStart(6, " ")}  ${'금액'.padStart(6, " ")}`);
   for (let i = 0; i < BUYPROUDCTLIST.length; i++) {
     const list = BUYPROUDCTLIST[i];
-    Console.print(`${list.name.padEnd(6, " ")} ${list.quantity.padStart(7, " ")} ${formatNumber(String(list.price)).padStart(14, " ")}`);
+    Console.print(`${list.name.padEnd(6, " ")} ${String(list.quantity).padStart(7, " ")} ${formatNumber(String(list.price)).padStart(14, " ")}`);
   }
   Console.print('==============증    정==============');
   if (PROMOTIONLIST.length > 0) {

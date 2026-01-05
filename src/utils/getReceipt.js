@@ -1,7 +1,4 @@
-import {
-  BUYPROUDCTLIST,
-  PROMOTIONLIST,
-} from "../data/receipt.js";
+import {BUYPROUDCTLIST, PROMOTIONLIST,} from "../data/receipt.js";
 import {PRODUCTS} from "../data/products.js";
 import {PROMOTIONS} from "../data/promotions.js";
 
@@ -15,7 +12,7 @@ function getBoughtGoods(purchaseGoods) {
   splitBoughtGoods = boughtGoods.map(value => value.split('-'));
 
   // 해당 상품 가격 가져오기
-  for (let i = 0; i <splitBoughtGoods.length; i++) {
+  for (let i = 0; i < splitBoughtGoods.length; i++) {
     PRODUCTS.find(value => {
       if (value.name === splitBoughtGoods[i][0]) {
         splitBoughtGoods[i].push(value.price);
@@ -33,19 +30,20 @@ function getBoughtGoods(purchaseGoods) {
   }
 }
 
-function getPromotion() {
+export function getPromotion() {
   let promotion = PRODUCTS.filter(value => value.promotion);
+  let filterPromotion = [];
 
   // 구매 상품에 해당하는 프로모션 상품 리스트 구하기
   for (let i = 0; i < BUYPROUDCTLIST.length; i++) {
     if (promotion.some(value => value.name === BUYPROUDCTLIST[i].name)) {
       promotion = promotion.filter(value => value.name === BUYPROUDCTLIST[i].name)
-      let filterPromotion = [];
+      filterPromotion = [];
       for (let j = 0; j < promotion.length; j++) {
         filterPromotion = PROMOTIONS.filter(value => value.name === promotion[j].promotion);
       }
 
-      filterPromotion.every(value => {
+      filterPromotion.every(async (value) => {
         if (value.buy <= Number(BUYPROUDCTLIST[i].quantity)) {
           let object = {};
           object['promotionProductName'] = BUYPROUDCTLIST[i].name;
@@ -57,9 +55,10 @@ function getPromotion() {
       })
     }
   }
+  return filterPromotion;
 }
 
-export function getReceipt(purchaseGoods) {
+export async function getReceipt(purchaseGoods) {
   getBoughtGoods(purchaseGoods);
-  getPromotion();
+  return getPromotion();
 }
