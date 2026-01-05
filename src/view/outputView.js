@@ -29,9 +29,13 @@ export async function printReceipt() {
     Console.print(`${list.name.padEnd(6, " ")} ${list.quantity.padStart(7, " ")} ${formatNumber(String(list.price)).padStart(14, " ")}`);
   }
   Console.print('==============증    정==============');
-  for (let i = 0; i < PROMOTIONLIST.length; i++) {
-    const list = PROMOTIONLIST[i];
-    Console.print(`${list.promotionProductName.padEnd(6, " ")} ${String(list.promotionProductQuantity).padStart(7, " ")}`);
+  if (PROMOTIONLIST.length > 0) {
+    for (let i = 0; i < PROMOTIONLIST.length; i++) {
+      const list = PROMOTIONLIST[i];
+      Console.print(`${list.promotionProductName.padEnd(6, " ")} ${String(list.promotionProductQuantity).padStart(7, " ")}`);
+    }
+  } else {
+    Console.print('없음');
   }
   Console.print('==================================');
   Console.print(`${TOTALPRICE.name.padEnd(6, " ")} ${String(TOTALPRICE.quantity).padStart(7, " ")} ${formatNumber(String(TOTALPRICE.price)).padStart(14, " ")}`);
