@@ -16,5 +16,5 @@ export const PRODUCTS = [
   { name: '에너지바', price: 2000, quantity: 5, promotion: null },
   { name: '정식도시락', price: 6400, quantity: 8, promotion: null },
   { name: '컵라면', price: 1700, quantity: 1, promotion: 'MD추천상품' },
-  { name: '컵라면', price: 1700, quantity: 1, promotion: null },
+  { name: '컵라면', price: 1700, quantity: 10, promotion: null },
 ]
