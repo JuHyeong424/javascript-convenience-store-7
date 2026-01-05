@@ -55,6 +55,8 @@ function getPromotion() {
           object['promotionProductName'] = BUYPROUDCTLIST[i].name;
           object['promotionProductQuantity'] = value.get;
           PROMOTIONLIST.push(object);
+        } else {
+
         }
       })
     }
@@ -91,7 +93,7 @@ function getTotalPrice(membership) {
     MEMBERSHIPDISCOUNT['price'] = 0;
   }
 
-  TOTALAMOUNTSPENT['name'] = '내살돈';
+  TOTALAMOUNTSPENT['name'] = '내실돈';
   TOTALAMOUNTSPENT['price'] = TOTALPRICE.price - PROMOTIONDISCOUNT.price - MEMBERSHIPDISCOUNT.price;
 }
 
