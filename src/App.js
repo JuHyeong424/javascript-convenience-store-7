@@ -1,4 +1,4 @@
-import {printInformationOfProduct} from "./view/outputView.js";
+import {printInformationOfProduct, printReceipt} from "./view/outputView.js";
 import {inputBuy, inputMembership} from "./view/inputView.js";
 import {getReceipt} from "./utils/getReceipt.js";
 
@@ -8,6 +8,7 @@ class App {
     const purchaseGoods =  await inputBuy();
     const memberShip = await inputMembership();
     getReceipt(purchaseGoods, memberShip);
+    await printReceipt();
   }
 }
 
