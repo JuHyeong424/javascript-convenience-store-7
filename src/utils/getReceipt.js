@@ -11,10 +11,12 @@ import {PROMOTIONS} from "../data/promotions.js";
 
 function getBoughtGoods(purchaseGoods) {
   // 입력 각 상품 구분하기
-  const boughtGoods = purchaseGoods.replace(/\[/g, '').replace(/]/g, '').split(',');
+  let boughtGoods = [];
+  boughtGoods = purchaseGoods.replace(/\[/g, '').replace(/]/g, '').split(',');
 
   // 각 상품 이름, 수량 구분하기
-  const splitBoughtGoods = boughtGoods.map(value => value.split('-'));
+  let splitBoughtGoods = [];
+  splitBoughtGoods = boughtGoods.map(value => value.split('-'));
 
   // 해당 상품 가격 가져오기
   for (let i = 0; i <splitBoughtGoods.length; i++) {
@@ -97,6 +99,4 @@ export function getReceipt(purchaseGoods, memberShip) {
   getBoughtGoods(purchaseGoods);
   getPromotion();
   getTotalPrice(memberShip);
-
-
 }

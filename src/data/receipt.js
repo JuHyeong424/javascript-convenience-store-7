@@ -1,13 +1,13 @@
-export const BUYPROUDCTLIST = [
+export let BUYPROUDCTLIST = [
 ]
 
-export const PROMOTIONLIST = [
+export let PROMOTIONLIST = [
 ]
 
-export const TOTALPRICE = {};
+export let TOTALPRICE = {};
 
-export const PROMOTIONDISCOUNT = {};
+export let PROMOTIONDISCOUNT = {};
 
-export const MEMBERSHIPDISCOUNT = {};
+export let MEMBERSHIPDISCOUNT = {};
 
-export const TOTALAMOUNTSPENT = {};
+export let TOTALAMOUNTSPENT = {};

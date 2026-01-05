@@ -10,6 +10,7 @@ import {
 } from "../data/receipt.js";
 
 export async function printInformationOfProduct() {
+  Console.print('');
   Console.print('안녕하세요. w편의점입니다.\n현재 보유하고 있는 상품입니다.\n');
   for (let i = 0; i < PRODUCTS.length; i++) {
     let product = PRODUCTS[i];
@@ -18,6 +19,7 @@ export async function printInformationOfProduct() {
 }
 
 export async function printReceipt() {
+  Console.print('');
   Console.print('==============W 편의점==============');
   Console.print(`${'상품명'.padEnd(6, " ")}  ${'수량'.padStart(6, " ")}  ${'금액'.padStart(6, " ")}`);
   for (let i = 0; i < BUYPROUDCTLIST.length; i++) {
@@ -30,8 +32,8 @@ export async function printReceipt() {
     Console.print(`${list.promotionProductName.padEnd(6, " ")} ${String(list.promotionProductQuantity).padStart(7, " ")}`);
   }
   Console.print('==================================');
-  Console.print(`${TOTALPRICE.name.padEnd(6, " ")} ${String(TOTALPRICE.quantity).padStart(7, " ")} ${String(TOTALPRICE.price).padStart(14, " ")}`);
-  Console.print(`${PROMOTIONDISCOUNT.name.padEnd(12, " ")} ${String(PROMOTIONDISCOUNT.price).padStart(14, " ")}`);
-  Console.print(`${MEMBERSHIPDISCOUNT.name.padEnd(12, " ")} ${String(MEMBERSHIPDISCOUNT.price).padStart(14, " ")}`);
-  Console.print(`${TOTALAMOUNTSPENT.name.padEnd(12, " ")} ${String(TOTALAMOUNTSPENT.price).padStart(14, " ")}`);
+  Console.print(`${TOTALPRICE.name.padEnd(6, " ")} ${String(TOTALPRICE.quantity).padStart(7, " ")} -${String(TOTALPRICE.price).padStart(14, " ")}`);
+  Console.print(`${PROMOTIONDISCOUNT.name.padEnd(12, " ")} -${String(PROMOTIONDISCOUNT.price).padStart(14, " ")}`);
+  Console.print(`${MEMBERSHIPDISCOUNT.name.padEnd(12, " ")} -${String(MEMBERSHIPDISCOUNT.price).padStart(14, " ")}`);
+  Console.print(`${TOTALAMOUNTSPENT.name.padEnd(12, " ")} -${String(TOTALAMOUNTSPENT.price).padStart(14, " ")}`);
 }
